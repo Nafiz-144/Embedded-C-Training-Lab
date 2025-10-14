@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
-
+/*
 // Demonstration of the 'volatile' keyword in C
 // 'volatile' tells the compiler that the value of the variable can change at any time
 // and prevents the compiler from optimizing out repeated accesses to the variable.
@@ -24,4 +24,12 @@ int main(void){
     }
     printf("flag set, exiting\n");
     return 0;
+}*/
+volatile int flag = 1;
+void set_function()
+{
+    flag = 1;
+}
+int main()
+{
 }

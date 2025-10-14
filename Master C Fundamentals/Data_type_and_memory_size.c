@@ -4,6 +4,8 @@
 #include <limits.h>
 
 int main(void) {
+
+    uint8_t x=5;
     printf("sizeof(uint8_t)  = %zu\n", sizeof(uint8_t));
     printf("sizeof(int8_t)   = %zu\n", sizeof(int8_t));
     printf("sizeof(uint16_t) = %zu\n", sizeof(uint16_t));
@@ -11,5 +13,6 @@ int main(void) {
     printf("UINT8_MAX = %u\n", (unsigned)UINT8_MAX);
     printf("INT8_MIN  = %d\n", INT8_MIN);
     printf("INT32_MAX = %d\n", INT32_MAX);
+    printf("x=%d\n", x+1);
     return 0;
 }
