@@ -1,4 +1,4 @@
-# 🧠 Embedded C Training Lab
+# Embedded C Training Lab
 
 Welcome to **Embedded C Training Lab** — a hands-on learning repository where I (Nafiz Ahamed) explore and master **Embedded C programming** through practical projects on the **STM32F103C8 (Blue Pill)** microcontroller.
 
