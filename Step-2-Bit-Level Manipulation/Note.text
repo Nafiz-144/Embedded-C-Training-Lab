@@ -1,1 +1,21 @@
 what is bit ?
+A bis is smallest unnit of data in computing and digital communication.
+->uint32_t reg = 0x00;  // সব বিট 0
+->reg |= (1 << 3);   // এখন ৩ নাম্বার বিট 1 হবে
+->reg &= ~(1 << 3);  // ৩ নাম্বার বিট 0 করে দেয়
+->reg ^= (1 << 3);   // 0 থাকলে 1, 1 থাকলে 0
+->if (reg & (1 << 3)) {
+    // বিটটা অন
+}
+What is mask?
+Mask means selecting specific bit with a pattern
+uint8_t reg = 0b11010110;
+uint8_t mask = 0b00111100;
+uint8_t result = reg & mask; // শুধু মাঝের ৪টা বিট থাকবে
+what is feild ?
+Two or more bit work together(like stm(mode:cnf(Configuration)))
+Many STM32 registers have multiple bits that make up a field.
+For example, the GPIOx_CRL register has 4 bits for each pin, MODE[1:0] and CNF[1:0].
+#define FIELD(width, pos) (((1u << (width)) - 1) << (pos))
+
+What is Read-Modify write Problem
