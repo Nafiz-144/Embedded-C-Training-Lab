@@ -1,0 +1,99 @@
+Memory & Storage Classes
+
+Learning Objectives
+->Understand the storage classes of C.
+->Know where variables are stored, what is their lifetime, and who can access them.
+->Understand the relationship between RAM vs Flash vs Stack vs Heap.
+->Be able to practically relate how these things work in embedded systems.
+
+
+->Flash(program memory)
+ Flash memory is a non-valatile memory.if power off then the memory do not erase.it store program code(text section)
+ and constant data.
+
+->SRAM(static ram)
+ Static random-access memory (static RAM or SRAM) is a type of random-access memory (RAM) that uses 
+ latching circuitry (flip-flop) to store each bit. SRAM is volatile memory, data is lost when power is removed.
+ SRAM is faster than DRAM because it uses flip-flops to store data, which does not require refreshing, 
+ unlike DRAM's capacitor-based cells that need periodic refreshes.
+
+->DRAM needs to be refreshed because it stores data using tiny capacitors that gradually lose their electrical
+ charge over time. Without periodic refreshing, the data would be lost as the charge leaks away. The refresh 
+ process involves the memory controller reading the data and then rewriting it to recharge the capacitors, 
+ ensuring the data remains intact. 
+
+->data section — initialized global/static variables
+ Global or static variables that are initially initialized with some value are in the .data section.
+->.bss section — uninitialized global/static variables
+ Global or static variables that are not initialized are in .bss.
+->Stack — local variables, function calls
+ Stack — Local variables, function calls
+->Heap — dynamic memory allocation (malloc, calloc, free)
+ this use when we need to atocate memory in runtime 
+ ->malloc() → Memory Allocate
+ It allocates a specified number of bytes from memory and returns the first address of that memory block.
+ Only the total number of bytes is needed (e.g. malloc(20))
+ ->calloc() → Contiguous Allocation
+ Takes two parameters: the number of elements and the size of each
+ ->free() → Memory Release
+ The memory that you have taken with malloc() or calloc(),
+ you have to free it from the Heap with free() after use.
+ Otherwise, there will be a “Memory Leak” — meaning that the more 
+ times the program runs, the more memory will be consumed but will not be returned.
+
+->auto default
+ Keyword: auto
+ Storage: Stack
+ Lifetime: While inside a function
+ Scope: Only inside a function
+ Default for: Local variables
+
+->static
+ Keyword: static
+ Storage: .data or .bss section (SRAM)
+ Lifetime: Lasts for the entire duration of the program
+ Scope: If inside a function, it is only accessible from that function
+
+->extern
+ Keyword: extern
+ Meaning: To declare a global variable or function in another file
+ Storage: Depends on original definition
+ Lifetime: As long as the entire program runs
+
+->register
+
+ Keyword: register
+ Storage: CPU register (if compiler allows)
+ Lifetime: While inside a function
+ Scope: Local
+
+ Register hint tells the compiler to store the variable in the CPU register instead of RAM for faster access.
+ However, it is just a “hint”, it is up to the compiler to accept it or not. 
+
+->What is the difference between static and global?
+ A static global variable is visible only within that file, while a global variable is visible from all files.
+
+
+ Why is volatile necessary?
+ Because hardware or interrupts can change the value, preventing the compiler from performing optimization.
+
+ 
+
+ What does const volatile mean?
+ It's a hardware register—you can't write to it, but the hardware can change its value.
+
+
+
+ What is the difference between auto and register?**
+ auto variables are stored on the Stack, and register variables are a speed hint to the compiler to store them in a 
+ CPU register.
+
+ 
+
+ Where is a static local variable stored?
+ In the .data or .bss section of SRAM(or main memory).
+
+
+ Can a variable be defined using extern?
+ No, it can only be declared.
+
