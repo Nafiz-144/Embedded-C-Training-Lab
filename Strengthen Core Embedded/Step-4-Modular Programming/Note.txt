@@ -1,0 +1,81 @@
+Outcome of— Modular Programming
+ ->1. Design Structured Embedded Projects
+ ->2. Create & Use Your Own Header and Source Files
+ ->3. Use static and extern Correctly in Multi-File Projects
+ ->4. Understand the Build Process (Compilation + Linking)
+ ->5. Achieve Code Reusability & Maintainability
+ ->6. Collaborate in Team Projects
+ ->7. Implement a Real Modular Bare-Metal STM32 Project
+
+
+->What is Modular Programming
+ Modular programming is a programming approach where a program is divided into separate 
+ sub-programs (modules or functions) that can be developed, tested, and debugged independently and then integrated to form a complete system.
+ ->Main Goal
+ To make large programs:
+ Easier to write
+ Easier to debug
+ Easier to understand
+ Easier to maintain
+ Reusable in other projects
+ ->Disadvantages
+ Initial setup time is higher due to planning and structure.
+ Slight overhead in integrating modules together.
+ Requires good understanding of interfaces (headers) between modules.
+
+->Structure of Modular C projects
+ in modular programing every module usally has two Files
+ Header file(.h) for containg function declarations,macros and extrn variable
+ In C programming, a macro is a segment of code that is given a name using the #define preprocessor directive.
+ When the C preprocessor encounters a macro name in the source code, it replaces that name with the macro's defined 
+ value or code segment before the code is compiled. This process is called macro expansion.
+ and other thing is Source file(.c) contain actual function difinitions
+
+->Role of Header file(.h)
+ header file mainly contains:
+ -function prototypes
+ -macros(#define)
+ -constans
+ -extem variable declarations 
+ -struct of enum definitions
+
+->Role of Source file 
+ the actual implemention of the functions declared in header file
+
+->Use of extem Keyword 
+ if a grobal variable is declared in one file but you want to use it in another,you must use 
+ led.C
+ int led_status=0; //definitions
+ main.C
+ extern int led_status //declarations(no memory allocation)
+ without extern the compiler would create a  new copy instead of using the same variable
+
+->Compilation & Linking in Modular Programs
+ When you build your project, the compiler compiles each .c file separately:
+ led.c -> led.o
+ main.c -> main.o
+ then the linker combines all o. files into one final executable (.elf,.hex or .bin)
+
+->static in Modular Programming
+ static plays a special role when working with multiple files.
+ static variable/function inside a .c file → not visible to other files.
+ (scope limited to that file)
+ // led.c
+ static void LED_PrivateFunction(void);  // only accessible inside led.c
+
+->How It’s Used in Embedded Industry
+ Every real embedded project (like STM32 HAL, FreeRTOS, or bare-metal firmware) uses modular architecture:
+
+ Examples:
+
+ gpio.c, gpio.h
+
+ usart.c, usart.h
+
+ timer.c, timer.h
+
+ main.c
+
+ system_stm32f10x.c
+
+ Each peripheral’s code is isolated as a module.
