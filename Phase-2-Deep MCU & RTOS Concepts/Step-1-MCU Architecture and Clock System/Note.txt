@@ -1,4 +1,4 @@
-->outline
+    ->outline
  1️⃣ MCU Architecture** হলো CPU, Memory, Bus, এবং Peripherals-এর সমন্বয়ে গঠিত একটি সম্পূর্ণ ছোট কম্পিউটার।
  2️⃣ CPU (Cortex-M3)** কোড execute করে, আর NVIC interrupt নিয়ন্ত্রণ করে।
  3️⃣ Memory system** এ থাকে Flash (program), SRAM (data), আর peripheral registers।
@@ -19,3 +19,9 @@
  -Program Counter (PC) :কোন instruction চলছে সেটা ধরে রাখে
  -Stack Pointer (SP) :Stack memory-এর বর্তমান অবস্থান ট্র্যাক করে
  -NVIC (Nested Vector Interrupt Controller) :Interrupt কে manage করে (priority, enable, disable)
+ 
+->Memory System
+ Flash Memory:প্রোগ্রাম কোড থাকে (ROM-এর মতো, Power off হলে মুছে না যায়)(64kb)
+ SRAM:চলার সময় data ধরে রাখে (volatile)(20kb)
+ Registers & Stack:CPU কাজ করার সময় temporary data(SRAM Part)
+ 
