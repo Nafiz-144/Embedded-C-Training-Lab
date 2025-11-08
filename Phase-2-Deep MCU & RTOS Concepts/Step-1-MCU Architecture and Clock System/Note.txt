@@ -1,9 +1,9 @@
-    ->outline
- 1️⃣ MCU Architecture** হলো CPU, Memory, Bus, এবং Peripherals-এর সমন্বয়ে গঠিত একটি সম্পূর্ণ ছোট কম্পিউটার।
- 2️⃣ CPU (Cortex-M3)** কোড execute করে, আর NVIC interrupt নিয়ন্ত্রণ করে।
- 3️⃣ Memory system** এ থাকে Flash (program), SRAM (data), আর peripheral registers।
- 4️⃣ Clock System (RCC)** MCU-এর সব অংশে সময় বা frequency সরবরাহ করে — HSI, HSE, PLL, LSI, LSE থেকে।
- 5️⃣ PLL ও Prescaler** দিয়ে আমরা clock frequency বাড়িয়ে বা কমিয়ে performance ও power নিয়ন্ত্রণ করি।
+ ->outline
+  1️⃣ MCU Architecture** হলো CPU, Memory, Bus, এবং Peripherals-এর সমন্বয়ে গঠিত একটি সম্পূর্ণ ছোট কম্পিউটার।
+  2️⃣ CPU (Cortex-M3)** কোড execute করে, আর NVIC interrupt নিয়ন্ত্রণ করে।
+  3️⃣ Memory system** এ থাকে Flash (program), SRAM (data), আর peripheral registers।
+  4️⃣ Clock System (RCC)** MCU-এর সব অংশে সময় বা frequency সরবরাহ করে — HSI, HSE, PLL, LSI, LSE থেকে।
+  5️⃣ PLL ও Prescaler** দিয়ে আমরা clock frequency বাড়িয়ে বা কমিয়ে performance ও power নিয়ন্ত্রণ করি।
 
 ->What is MCU
  -MCU=Microcntroller Unit
