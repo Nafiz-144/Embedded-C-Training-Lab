@@ -24,4 +24,4 @@
  Flash Memory:প্রোগ্রাম কোড থাকে (ROM-এর মতো, Power off হলে মুছে না যায়)(64kb)
  SRAM:চলার সময় data ধরে রাখে (volatile)(20kb)
  Registers & Stack:CPU কাজ করার সময় temporary data(SRAM Part)
- 
+ ..
