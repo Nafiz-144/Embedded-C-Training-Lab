@@ -1,28 +1,30 @@
 #include <stdio.h>
-
 int main()
 {
 
-    char s[100];
-    printf("Enter your name :%s");
-    scanf("%s", s);
-    int i = 0, len = 0;
-    char temp;
-    // calculate length
-    while (s[len] != '\0')
+    int a[1000], n, i, f = 0, p = 0, np = 0;
+    printf("Enter the number of elements:");
+    scanf("%d", &n);
+    printf("Enter the element:");
+    scanf("%d", &a[i]);
+    if (n <= 1)
     {
-        len++;
+        printf("Not a prime Number!");
     }
-    int j = len - 1;
-    // string reverse
-    while (i < j)
+    else
     {
-        temp = s[i];
-        s[i] = s[j];
-        s[j] = temp;
-        i++;
-        j--;
+        for (i = 0; i < n; i++)
+        {
+            if (a[i] % 2 == 0)
+            {
+                np++;
+            }
+            else
+            {
+                p++;
+            }
+        }
     }
-    printf("String Reverse:->%s", s);
-    return 0;
+    printf("Number Of prime Number:", p);
+    printf("Number Of not prime Number:", np);
 }
